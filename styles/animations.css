@@ -1,0 +1,191 @@
+/* ============================================================
+   animations.css — Micro-interactions & Effects "แปลทีดิtionary"
+   ============================================================ */
+
+/* ─── Transitions (Global) ─── */
+* {
+  transition: background-color 0.3s ease,
+              color 0.25s ease,
+              border-color 0.3s ease,
+              box-shadow 0.25s ease;
+}
+
+/* ─── Page fade-in ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-section.active {
+  animation: fadeIn 0.35s ease both;
+}
+
+/* ─── Word Card Hover ─── */
+.word-card {
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+.word-card:hover,
+.word-card:focus {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--card-shadow-hover);
+  outline: none;
+}
+
+/* ─── Bookmark Heart Pulse ─── */
+@keyframes heartPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.45); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.btn-bookmark {
+  transition: transform 0.2s ease;
+}
+.btn-bookmark.pulse {
+  animation: heartPulse 0.4s ease;
+}
+
+/* ─── Bounce (Random Button) ─── */
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.2) rotate(-4deg); }
+  60%  { transform: scale(0.92) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.bounce {
+  animation: bounce 0.55s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* ─── Button Press ─── */
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ─── Neon Glow Pulse (2020s theme) ─── */
+@keyframes neonGlow {
+  0%, 100% { box-shadow: var(--card-shadow); }
+  50%       { box-shadow: var(--card-shadow-hover); }
+}
+
+:root[data-theme="2020s"] .word-card:hover {
+  animation: neonGlow 1.8s ease-in-out infinite;
+}
+
+/* ─── Spin Loading ─── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ─── Modal Entrance ─── */
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(32px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-box {
+  animation: modalSlideIn 0.3s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+/* ─── Progress Bar Fill ─── */
+@keyframes fillProgress {
+  from { width: 0%; }
+}
+
+.quiz-progress-bar {
+  animation: fillProgress 0.5s ease both;
+}
+
+/* ─── Score Bar Fill ─── */
+.score-bar-fill {
+  animation: fillProgress 0.7s ease both;
+}
+
+/* ─── Theme switch flash ─── */
+@keyframes themeFlash {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+body.theme-switching {
+  animation: themeFlash 0.4s ease;
+}
+
+/* ─── Era Tab Active Indicator ─── */
+.era-tab {
+  position: relative;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+.era-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 70%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1);
+}
+.era-tab.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.era-tab.active {
+  color: var(--primary);
+}
+.era-tab:hover {
+  transform: translateY(-2px);
+}
+
+/* ─── Quiz Option Selected ─── */
+.quiz-option-btn {
+  transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+.quiz-option-btn.selected {
+  background: var(--primary) !important;
+  color: var(--btn-text) !important;
+  transform: scale(1.02);
+}
+.quiz-option-btn:hover:not(:disabled) {
+  transform: translateX(6px);
+}
+
+/* ─── Found-word Chip Hover ─── */
+.found-word-chip {
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.found-word-chip:hover {
+  transform: scale(1.06);
+}
+
+/* ─── Scroll reveal (simple) ─── */
+.word-card {
+  animation: fadeIn 0.4s ease both;
+}
+
+/* ─── 90s CRT Flicker (subtle, optional) ─── */
+@keyframes crtFlicker {
+  0%   { opacity: 1; }
+  49%  { opacity: 1; }
+  50%  { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+:root[data-theme="90s"] main {
+  animation: crtFlicker 5s step-end infinite;
+}

@@ -1,20 +1,384 @@
 <!DOCTYPE html>
-<html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>แปลทีดิtionary — งงคำไหน แปลทีดิ! พจนานุกรมคำแสลงไทย</title>
-    <meta name="description" content="แปลทีดิtionary พจนานุกรมรวบรวมคำแสลงไทยจากโซเชียลมีเดียและอินเทอร์เน็ตทุกยุคสมัย ค้นหาความหมาย บริบท ระดับภาษา และส่งคำศัพท์ใหม่" />
-    
-    <!-- Google Fonts: Prompt & Kanit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="th" data-theme="2020s">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แปลทีดิtionary — งงคำไหน แปลทีดิ!</title>
+  <meta name="description" content="พจนานุกรมรวบรวมคำแสลงไทยจากโซเชียลมีเดียและอินเทอร์เน็ต ครอบคลุมทุกยุค ตั้งแต่ ICQ ถึง TikTok — งงคำไหน แปลทีดิ!" />
+  <meta name="keywords" content="คำแสลงไทย, พจนานุกรมแสลง, Thai slang, Gen Z Thai, TikTok slang, แปลทีดิtionary" />
+  <meta property="og:title" content="แปลทีดิtionary — งงคำไหน แปลทีดิ!" />
+  <meta property="og:description" content="พจนานุกรมคำแสลงไทยทุกยุค ตั้งแต่ ICQ ถึง TikTok" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
+
+  <!-- Stylesheets (order matters) -->
+  <link rel="stylesheet" href="styles/themes.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner container">
+
+      <!-- Logo -->
+      <a class="site-logo" href="#" aria-label="แปลทีดิtionary หน้าแรก" id="logo-home-link">
+        <span class="logo-title">📖 แปลทีดิtionary</span>
+        <span class="logo-slogan">งงคำไหน แปลทีดิ!</span>
+      </a>
+
+      <!-- Time Machine Era Switcher -->
+      <div class="era-switcher" role="group" aria-label="เลือกยุคสมัย">
+        <span class="era-switcher-label">🕰️ ยุค</span>
+        <button class="era-tab" data-era="90s" id="era-tab-90s" aria-pressed="false">90s</button>
+        <button class="era-tab" data-era="2000s" id="era-tab-2000s" aria-pressed="false">2000s</button>
+        <button class="era-tab" data-era="2010s" id="era-tab-2010s" aria-pressed="false">2010s</button>
+        <button class="era-tab active" data-era="2020s" id="era-tab-2020s" aria-pressed="true">2020s</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION TABS
+  ═══════════════════════════════════════════ -->
+  <nav class="site-nav" role="navigation" aria-label="เมนูหลัก">
+    <div class="nav-inner container">
+      <button class="nav-tab active" data-target="section-home" id="nav-home" aria-selected="true">
+        🏠 หน้าแรก
+      </button>
+      <button class="nav-tab" data-target="section-translator" id="nav-translator" aria-selected="false">
+        🔄 แปลแสลง
+      </button>
+      <button class="nav-tab" data-target="section-quiz" id="nav-quiz" aria-selected="false">
+        🎮 ทดสอบยุค
+      </button>
+      <button class="nav-tab" data-target="section-submit" id="nav-submit" aria-selected="false">
+        ✍️ ส่งคำใหม่
+      </button>
+      <button class="nav-tab" data-target="section-bookmarks" id="nav-bookmarks" aria-selected="false">
+        ❤️ คำโปรด
+        <span class="badge-count" id="bookmark-count-badge" style="display:none">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════ -->
+  <main role="main" class="container">
+
+    <!-- ──────────────────────────────────────────
+         SECTION 1: HOME
+    ────────────────────────────────────────── -->
+    <section class="page-section active" id="section-home" aria-label="หน้าแรก">
+
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <h1 class="hero-title">📖 คลังแสลงไทยทุกยุค</h1>
+        <p class="hero-subtitle">ค้นหาคำแสลง อ่านความหมาย และเข้าใจบริบทตั้งแต่ยุค ICQ จนถึง TikTok</p>
+
+        <!-- Search Bar -->
+        <form class="search-bar" role="search" aria-label="ค้นหาคำแสลง" onsubmit="return false;">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="search-input"
+            name="q"
+            placeholder="พิมพ์คำแสลงหรือความหมาย..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            aria-label="ค้นหาคำแสลง"
+          />
+          <button type="button" id="search-clear" aria-label="ล้างการค้นหา">✕</button>
+          <button type="submit" id="search-btn" aria-label="ค้นหา">ค้นหา</button>
+        </form>
+      </div>
+
+      <!-- Era Filter -->
+      <div class="filters-row" role="group" aria-label="กรองตามยุค">
+        <span class="filter-label">ยุค:</span>
+        <button class="filter-era-btn active" data-era="all" id="era-filter-all">ทั้งหมด</button>
+        <button class="filter-era-btn" data-era="90s" id="era-filter-90s">🌐 ยุค 90s</button>
+        <button class="filter-era-btn" data-era="2000s" id="era-filter-2000s">💖 ยุค 2000s</button>
+        <button class="filter-era-btn" data-era="2010s" id="era-filter-2010s">📱 ยุค 2010s</button>
+        <button class="filter-era-btn" data-era="2020s" id="era-filter-2020s">⚡ ยุค 2020s</button>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filters-row" role="group" aria-label="กรองตามหมวดหมู่">
+        <span class="filter-label">หมวด:</span>
+        <div class="category-scroll" id="category-filters" aria-label="หมวดหมู่คำแสลง">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <span id="word-count" aria-live="polite" aria-label="จำนวนคำที่พบ">พบ 0 คำ</span>
+        <button id="random-btn" aria-label="สุ่มคำแสลง">🎲 สุ่มคำแสลงทีดิ!</button>
+      </div>
+
+      <!-- Word Grid -->
+      <div id="word-grid" role="list" aria-label="รายการคำแสลง">
+        <!-- Rendered by JS -->
+      </div>
+
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         SECTION 2: TRANSLATOR
+    ────────────────────────────────────────── -->
+    <section class="page-section" id="section-translator" aria-label="เครื่องมือแปลแสลง">
+      <h2 class="section-title">🔄 เครื่องมือแปลแสลง</h2>
+      <p class="section-desc">พิมพ์ข้อความที่มีคำแสลง แล้วเราจะช่วยแปลให้เข้าใจง่ายขึ้น</p>
+
+      <div class="translator-layout">
+        <!-- Input Box -->
+        <div class="translator-box">
+          <label for="translator-input">📝 ข้อความต้นฉบับ</label>
+          <textarea
+            id="translator-input"
+            placeholder="พิมพ์ข้อความที่ต้องการแปล เช่น 'วันนี้ตัวตึงมากเลย ฉ่ำสุดๆ'&#10;(กด Ctrl+Enter เพื่อแปล)"
+            aria-label="กรอกข้อความต้นฉบับ"
+          ></textarea>
+          <div class="translator-controls">
+            <button class="btn btn-primary" id="translate-btn">🔄 แปลเดี๋ยวนี้!</button>
+            <button class="btn btn-secondary" id="translator-clear-btn">🗑️ ล้าง</button>
+          </div>
+        </div>
+
+        <!-- Direction Swap -->
+        <div class="translator-swap-col">
+          <button id="translator-direction-btn" aria-label="เปลี่ยนทิศทางการแปล">
+            🔄 แสลง → ทางการ
+          </button>
+        </div>
+
+        <!-- Output Box -->
+        <div class="translator-box">
+          <label>✨ ผลการแปล</label>
+          <div id="translator-output" aria-live="polite" aria-label="ผลการแปล">
+            <span class="placeholder-text">ผลลัพธ์การแปลจะปรากฏที่นี่...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Found Words List -->
+      <div class="translator-found" id="translator-found-list" aria-live="polite" aria-label="คำแสลงที่พบ">
+      </div>
+
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         SECTION 3: ERA QUIZ
+    ────────────────────────────────────────── -->
+    <section class="page-section" id="section-quiz" aria-label="แบบทดสอบวัดระดับยุค">
+
+      <div class="quiz-intro">
+        <div class="quiz-intro-emoji">🕹️</div>
+        <h2 class="section-title">คุณเป็นคนยุคไหน?</h2>
+        <p class="section-desc">ตอบคำถาม 5 ข้อ แล้วเราจะบอกว่าคุณเป็นประชากรยุคอินเทอร์เน็ตยุคไหน!</p>
+        <button class="btn btn-primary" id="quiz-start-btn" style="margin:0 auto;">🎮 เริ่มทดสอบ!</button>
+      </div>
+
+      <div id="quiz-container" aria-live="polite" aria-label="คำถามแบบทดสอบ">
+        <!-- Rendered by JS -->
+      </div>
+
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         SECTION 4: SUBMIT SLANG
+    ────────────────────────────────────────── -->
+    <section class="page-section" id="section-submit" aria-label="ส่งคำศัพท์ใหม่">
+      <h2 class="section-title">✍️ ส่งคำแสลงใหม่</h2>
+      <p class="section-desc">มีคำแสลงที่ยังไม่มีในคลัง? ส่งมาให้เราเพิ่มในระบบ!</p>
+
+      <div class="submit-notice" role="note">
+        📋 <strong>หมายเหตุ:</strong> คำแสลงที่ส่งจะถูกตรวจสอบโดยทีมงานก่อนเผยแพร่ เพื่อรักษาความถูกต้องและคุณภาพของคลังข้อมูล
+      </div>
+
+      <form class="submit-form" id="submit-slang-form" novalidate aria-label="แบบฟอร์มส่งคำแสลงใหม่">
+
+        <!-- Honeypot (anti-spam, hidden) -->
+        <div class="honeypot-field" aria-hidden="true">
+          <input type="text" id="submit-honeypot" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-word">
+            คำแสลง <span class="required">*</span>
+          </label>
+          <input
+            class="form-input"
+            type="text"
+            id="submit-word"
+            name="word"
+            placeholder="เช่น ตัวตึง, ฉ่ำ, จึ้ง"
+            maxlength="60"
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-meaning">
+            ความหมาย <span class="required">*</span>
+          </label>
+          <textarea
+            class="form-input form-textarea"
+            id="submit-meaning"
+            name="meaning"
+            placeholder="อธิบายความหมายของคำนี้ให้ชัดเจน"
+            maxlength="300"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-example">
+            ตัวอย่างประโยค <span class="required">*</span>
+          </label>
+          <textarea
+            class="form-input form-textarea"
+            id="submit-example"
+            name="example"
+            placeholder="เช่น 'วันนี้ฉ่ำมาก ได้ทานข้าวอร่อยๆ'"
+            maxlength="300"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-era">ยุคของคำศัพท์</label>
+          <select class="form-input form-select" id="submit-era" name="era">
+            <option value="">ไม่แน่ใจ</option>
+            <option value="90s">🌐 ยุค 90s (ICQ / Pantip เว็บบอร์ด)</option>
+            <option value="2000s">💖 ยุค 2000s (MSN / Hi5 / Y2K)</option>
+            <option value="2010s">📱 ยุค 2010s (Facebook / BB PIN)</option>
+            <option value="2020s">⚡ ยุค 2020s (TikTok / Gen Z)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-level">ระดับภาษา</label>
+          <select class="form-input form-select" id="submit-level" name="level">
+            <option value="informal">ไม่เป็นทางการ</option>
+            <option value="vulgar">หยาบ</option>
+            <option value="offensive">หยาบมาก</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="submit-ref">ลิงก์อ้างอิง (ไม่บังคับ)</label>
+          <input
+            class="form-input"
+            type="url"
+            id="submit-ref"
+            name="reference"
+            placeholder="https://..."
+          />
+          <p class="form-hint">ลิงก์ไปยังคลิป บทความ หรือโพสต์ต้นฉบับ</p>
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="submit-form-btn" style="width:100%;">
+          📤 ส่งคำแสลงเพื่อตรวจสอบ
+        </button>
+
+        <div id="submit-success" role="alert">
+          ✅ ขอบคุณที่ร่วมสร้างคลังคำแสลง! ทีมงานจะตรวจสอบและเพิ่มให้เร็วๆ นี้ 🎉
+        </div>
+
+      </form>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         SECTION 5: BOOKMARKS
+    ────────────────────────────────────────── -->
+    <section class="page-section" id="section-bookmarks" aria-label="คำโปรดที่บันทึกไว้">
+      <h2 class="section-title">❤️ คำโปรดของฉัน</h2>
+      <p class="section-desc">คำแสลงที่คุณกดหัวใจบันทึกไว้ จะยังอยู่ที่นี่แม้กด Refresh</p>
+
+      <div id="bookmarks-grid" role="list" aria-label="รายการคำโปรด">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      <span class="footer-logo">📖 แปลทีดิtionary</span>
+      &nbsp;—&nbsp;
+      งงคำไหน แปลทีดิ! 🔥
+      &nbsp;|&nbsp;
+      พจนานุกรมคำแสลงไทยทุกยุค
+    </p>
+  </footer>
+
+</div><!-- /.app-wrapper -->
+
+
+<!-- ═══════════════════════════════════════════
+     WORD DETAIL MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="word-modal" role="dialog" aria-modal="true" aria-labelledby="modal-word-title-text">
+  <div id="modal-overlay" aria-hidden="true" style="position:absolute;inset:0;cursor:pointer;"></div>
+  <div class="modal-box" role="document">
+    <div class="modal-header-bar">
+      <button id="modal-close" aria-label="ปิดหน้าต่าง">✕</button>
+    </div>
+    <div id="modal-body">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     REPORT MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="report-modal" role="dialog" aria-modal="true" aria-label="แจ้งข้อมูลผิด">
+  <div id="report-overlay" style="position:absolute;inset:0;" aria-hidden="true"></div>
+  <div class="modal-box" style="max-width:420px;" role="document">
+    <div class="modal-header-bar">
+      <button id="report-modal-close" aria-label="ปิดหน้าต่างแจ้งข้อมูลผิด">✕</button>
+    </div>
+    <div class="report-box">
+      <h3>🚩 แจ้งข้อมูลผิด</h3>
+      <p>คำ: <span class="report-word-name" id="report-word-title"></span></p>
+      <label for="report-message" class="form-label">รายละเอียดที่ต้องการแจ้ง <span class="required">*</span></label>
+      <textarea
+        id="report-message"
+        placeholder="อธิบายว่าข้อมูลใดไม่ถูกต้อง หรือควรแก้ไขอย่างไร..."
+        aria-required="true"
+      ></textarea>
+      <div class="report-actions">
+        <button class="btn btn-primary" id="report-submit-btn">📤 ส่งรายงาน</button>
+        <button class="btn btn-secondary" id="report-cancel-btn" onclick="document.getElementById('report-modal').classList.remove('open')">ยกเลิก</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS (load order is critical)
+═══════════════════════════════════════════ -->
+<script src="scripts/slang-data.js"></script>
+<script src="scripts/translator.js"></script>
+<script src="scripts/quiz.js"></script>
+<script src="scripts/app.js"></script>
+
+</body>
 </html>

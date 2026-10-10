@@ -1,0 +1,167 @@
+/* ============================================================
+   themes.css — Dynamic Theme Engine "แปลทีดิtionary"
+   4 ยุค: 90s | 2000s | 2010s | 2020s (default)
+   ============================================================ */
+
+/* ─── ยุค 2020s (TikTok / Gen Z / Dark Cyber Neon) ─── */
+:root,
+:root[data-theme="2020s"] {
+  --bg: #0B0F19;
+  --bg-alt: #111827;
+  --surface: rgba(20, 27, 45, 0.82);
+  --surface-solid: #141B2D;
+  --surface-hover: rgba(30, 41, 60, 0.9);
+  --border: rgba(0, 242, 254, 0.18);
+  --border-accent: rgba(254, 8, 121, 0.4);
+  --primary: #00F2FE;
+  --primary-dark: #00C4CE;
+  --accent: #FE0879;
+  --accent-dark: #C8065F;
+  --text: #E8F4FD;
+  --text-muted: rgba(232, 244, 253, 0.55);
+  --text-heading: #FFFFFF;
+  --card-shadow: 0 0 0 1px rgba(0, 242, 254, 0.15), 0 8px 32px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 0 0 1px rgba(0, 242, 254, 0.5), 0 12px 48px rgba(0, 242, 254, 0.12), 0 0 24px rgba(254, 8, 121, 0.1);
+  --glow: 0 0 16px rgba(0, 242, 254, 0.4);
+  --glow-accent: 0 0 16px rgba(254, 8, 121, 0.5);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --glass: blur(16px);
+  --btn-text: #0B0F19;
+  --era-name: "2020s";
+
+  /* Nav */
+  --nav-bg: rgba(11, 15, 25, 0.92);
+  --nav-border: rgba(0, 242, 254, 0.15);
+
+  /* Era Badges */
+  --badge-90s-bg: rgba(0, 128, 128, 0.2);
+  --badge-90s-color: #00CCCC;
+  --badge-2000s-bg: rgba(255, 20, 147, 0.18);
+  --badge-2000s-color: #FF69B4;
+  --badge-2010s-bg: rgba(24, 119, 242, 0.18);
+  --badge-2010s-color: #60A5FA;
+  --badge-2020s-bg: rgba(254, 8, 121, 0.18);
+  --badge-2020s-color: #FE0879;
+}
+
+/* ─── ยุค 90s (ICQ / Webboard Pantip / Retro) ─── */
+:root[data-theme="90s"] {
+  --bg: #C0C0C0;
+  --bg-alt: #D4D0C8;
+  --surface: #DFDFDF;
+  --surface-solid: #DFDFDF;
+  --surface-hover: #ECECEC;
+  --border: #808080;
+  --border-accent: #000080;
+  --primary: #000080;
+  --primary-dark: #00006A;
+  --accent: #008080;
+  --accent-dark: #006060;
+  --text: #000000;
+  --text-muted: #444444;
+  --text-heading: #000080;
+  --card-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #808080, inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+  --card-shadow-hover: 3px 3px 0 #ffffff, -3px -3px 0 #606060;
+  --glow: none;
+  --glow-accent: none;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-pill: 2px;
+  --glass: none;
+  --btn-text: #FFFFFF;
+  --era-name: "90s";
+
+  --nav-bg: #000080;
+  --nav-border: #0000A0;
+
+  --badge-90s-bg: #008080;
+  --badge-90s-color: #FFFFFF;
+  --badge-2000s-bg: #C0C0C0;
+  --badge-2000s-color: #000080;
+  --badge-2010s-bg: #C0C0C0;
+  --badge-2010s-color: #000080;
+  --badge-2020s-bg: #C0C0C0;
+  --badge-2020s-color: #000080;
+}
+
+/* ─── ยุค 2000s (MSN / Hi5 / Y2K Glossy) ─── */
+:root[data-theme="2000s"] {
+  --bg: #EEF2F8;
+  --bg-alt: #E2E9F4;
+  --surface: #FFFFFF;
+  --surface-solid: #FFFFFF;
+  --surface-hover: #F5F0FF;
+  --border: #D8E0F0;
+  --border-accent: #FF1493;
+  --primary: #0084FF;
+  --primary-dark: #006ACC;
+  --accent: #FF1493;
+  --accent-dark: #CC0A73;
+  --text: #1A1A2E;
+  --text-muted: #6B7380;
+  --text-heading: #0062CC;
+  --card-shadow: 0 4px 16px rgba(0, 132, 255, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 8px 28px rgba(0, 132, 255, 0.22), 0 4px 12px rgba(255, 20, 147, 0.1);
+  --glow: 0 0 12px rgba(0, 132, 255, 0.3);
+  --glow-accent: 0 0 12px rgba(255, 20, 147, 0.3);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --glass: none;
+  --btn-text: #FFFFFF;
+  --era-name: "2000s";
+
+  --nav-bg: linear-gradient(135deg, #0084FF 0%, #FF1493 100%);
+  --nav-border: rgba(255, 255, 255, 0.3);
+
+  --badge-90s-bg: rgba(0, 128, 128, 0.12);
+  --badge-90s-color: #007070;
+  --badge-2000s-bg: rgba(255, 20, 147, 0.12);
+  --badge-2000s-color: #CC0A73;
+  --badge-2010s-bg: rgba(0, 132, 255, 0.12);
+  --badge-2010s-color: #0062CC;
+  --badge-2020s-bg: rgba(100, 0, 200, 0.1);
+  --badge-2020s-color: #6400C8;
+}
+
+/* ─── ยุค 2010s (Facebook / BB PIN / Flat Design) ─── */
+:root[data-theme="2010s"] {
+  --bg: #F0F2F5;
+  --bg-alt: #E8EBF0;
+  --surface: #FFFFFF;
+  --surface-solid: #FFFFFF;
+  --surface-hover: #F0F4FF;
+  --border: #E4E6EB;
+  --border-accent: #1877F2;
+  --primary: #1877F2;
+  --primary-dark: #1260CC;
+  --accent: #FF7700;
+  --accent-dark: #CC5E00;
+  --text: #1C1E21;
+  --text-muted: #65676B;
+  --text-heading: #1877F2;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 4px 16px rgba(24, 119, 242, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+  --glow: none;
+  --glow-accent: 0 0 8px rgba(255, 119, 0, 0.3);
+  --radius: 12px;
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+  --glass: none;
+  --btn-text: #FFFFFF;
+  --era-name: "2010s";
+
+  --nav-bg: #1877F2;
+  --nav-border: rgba(255, 255, 255, 0.15);
+
+  --badge-90s-bg: rgba(0, 128, 128, 0.1);
+  --badge-90s-color: #006060;
+  --badge-2000s-bg: rgba(255, 20, 147, 0.1);
+  --badge-2000s-color: #CC0A73;
+  --badge-2010s-bg: rgba(24, 119, 242, 0.12);
+  --badge-2010s-color: #1260CC;
+  --badge-2020s-bg: rgba(255, 119, 0, 0.1);
+  --badge-2020s-color: #CC5E00;
+}
