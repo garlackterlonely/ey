@@ -4,13 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>แปลทีดิtionary — งงคำไหน แปลทีดิ!</title>
-  <meta name="description" content="พจนานุกรมรวบรวมคำแสลงไทยจากโซเชียลมีเดียและอินเทอร์เน็ต ครอบคลุมทุกยุค ตั้งแต่ ICQ ถึง TikTok — งงคำไหน แปลทีดิ!" />
-  <meta name="keywords" content="คำแสลงไทย, พจนานุกรมแสลง, Thai slang, Gen Z Thai, TikTok slang, แปลทีดิtionary" />
+  <meta name="description" content="พจนานุกรมรวบรวมคำแสลงไทยจากโซเชียลมีเดียและอินเทอร์เน็ต พร้อมความหมาย ตัวอย่างการใช้ และบริบทให้เข้าใจง่าย — งงคำไหน แปลทีดิ!" />
+  <meta name="keywords" content="คำแสลงไทย, พจนานุกรมแสลง, Thai slang, TikTok slang, แปลทีดิtionary, คำฮิตติดปาก" />
   <meta property="og:title" content="แปลทีดิtionary — งงคำไหน แปลทีดิ!" />
-  <meta property="og:description" content="พจนานุกรมคำแสลงไทยทุกยุค ตั้งแต่ ICQ ถึง TikTok" />
+  <meta property="og:description" content="พจนานุกรมรวบรวมคำแสลงไทยจากโซเชียลและอินเทอร์เน็ต พร้อมความหมาย ตัวอย่างการใช้" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
 
-  <!-- Stylesheets (order matters) -->
+  <!-- Google Fonts: Prompt & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Kanit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/themes.css" />
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/animations.css" />
@@ -20,352 +25,798 @@
 <div class="app-wrapper">
 
   <!-- ═══════════════════════════════════════════
-       HEADER
+       1. HEADER BANNER (Sky, Stars, Logo, Mascot, Skyline)
   ═══════════════════════════════════════════ -->
-  <header class="site-header" role="banner">
-    <div class="header-inner container">
+  <header class="hero-header" role="banner">
+    <div class="sky-stars-layer" aria-hidden="true"></div>
 
-      <!-- Logo -->
-      <a class="site-logo" href="#" aria-label="แปลทีดิtionary หน้าแรก" id="logo-home-link">
-        <span class="logo-title">📖 แปลทีดิtionary</span>
-        <span class="logo-slogan">งงคำไหน แปลทีดิ!</span>
-      </a>
-
-      <!-- Time Machine Era Switcher -->
-      <div class="era-switcher" role="group" aria-label="เลือกยุคสมัย">
-        <span class="era-switcher-label">🕰️ ยุค</span>
-        <button class="era-tab" data-era="90s" id="era-tab-90s" aria-pressed="false">90s</button>
-        <button class="era-tab" data-era="2000s" id="era-tab-2000s" aria-pressed="false">2000s</button>
-        <button class="era-tab" data-era="2010s" id="era-tab-2010s" aria-pressed="false">2010s</button>
-        <button class="era-tab active" data-era="2020s" id="era-tab-2020s" aria-pressed="true">2020s</button>
+    <div class="header-container container">
+      <!-- Left: Logo & Subtitle Pill -->
+      <div class="header-brand">
+        <a href="#" class="brand-link" id="logo-home-link" aria-label="แปลทีดิtionary หน้าแรก">
+          <div class="brand-title-row">
+            <span class="brand-book-icon" aria-hidden="true">📖</span>
+            <span class="brand-logo-text">
+              <span class="brand-thai">แปลทีดิ</span><span class="brand-eng">tionary</span>
+            </span>
+            <span class="brand-star" aria-hidden="true">⭐</span>
+          </div>
+        </a>
+        <div class="brand-badge-pill">
+          งงคำไหน แปลทีดิ!
+        </div>
       </div>
 
+      <!-- Right: Speech Bubble & Cat Mascot -->
+      <div class="header-mascot-wrapper">
+        <div class="mascot-speech-bubble" role="note" aria-label="ข้อความมาสคอต">
+          <p class="bubble-line1">คำแสลงเยอะ ไม่ต้องงง แค่</p>
+          <p class="bubble-line2">แปลทีดิ!</p>
+        </div>
+        <div class="mascot-badge-circle" title="มาสคอตน้องแมวแว่นดำสุดคูล">
+          <img src="assets/mascot.jpg" alt="มาสคอตแปลทีดิ" class="mascot-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- City Skyline Silhouette at bottom of header -->
+    <div class="city-skyline-wrapper" aria-hidden="true">
+      <svg class="city-skyline-svg" viewBox="0 0 1200 56" preserveAspectRatio="none">
+        <path d="M0,56 L0,32 L24,32 L24,22 L38,22 L38,32 L56,32 L56,12 L76,12 L76,32 L94,32 L94,42 L120,42 L120,18 L142,18 L142,32 L160,32 L160,8 L182,8 L182,26 L198,26 L198,38 L228,38 L228,16 L254,16 L254,32 L276,32 L276,20 L298,20 L298,36 L316,36 L316,46 L346,46 L346,22 L368,22 L368,38 L394,38 L394,10 L416,10 L416,28 L438,28 L438,40 L464,40 L464,20 L490,20 L490,34 L512,34 L512,12 L538,12 L538,36 L564,36 L564,26 L586,26 L586,42 L616,42 L616,16 L638,16 L638,32 L660,32 L660,8 L682,8 L682,24 L704,24 L704,38 L734,38 L734,18 L760,18 L760,36 L786,36 L786,12 L812,12 L812,32 L838,32 L838,24 L864,24 L864,40 L890,40 L890,14 L916,14 L916,32 L942,32 L942,20 L968,20 L968,38 L994,38 L994,10 L1020,10 L1020,30 L1046,30 L1046,42 L1076,42 L1076,18 L1102,18 L1102,34 L1128,34 L1128,12 L1154,12 L1154,36 L1178,36 L1178,22 L1200,22 L1200,56 Z" fill="#133d7b"/>
+      </svg>
     </div>
   </header>
 
   <!-- ═══════════════════════════════════════════
-       NAVIGATION TABS
+       2. MAIN NAVIGATION BAR
   ═══════════════════════════════════════════ -->
-  <nav class="site-nav" role="navigation" aria-label="เมนูหลัก">
-    <div class="nav-inner container">
-      <button class="nav-tab active" data-target="section-home" id="nav-home" aria-selected="true">
-        🏠 หน้าแรก
-      </button>
-      <button class="nav-tab" data-target="section-translator" id="nav-translator" aria-selected="false">
-        🔄 แปลแสลง
-      </button>
-      <button class="nav-tab" data-target="section-quiz" id="nav-quiz" aria-selected="false">
-        🎮 ทดสอบยุค
-      </button>
-      <button class="nav-tab" data-target="section-submit" id="nav-submit" aria-selected="false">
-        ✍️ ส่งคำใหม่
-      </button>
-      <button class="nav-tab" data-target="section-bookmarks" id="nav-bookmarks" aria-selected="false">
-        ❤️ คำโปรด
-        <span class="badge-count" id="bookmark-count-badge" style="display:none">0</span>
-      </button>
+  <nav class="site-nav-bar" role="navigation" aria-label="เมนูหลัก">
+    <div class="nav-container container">
+      <div class="nav-left-tabs">
+        <button class="nav-btn active" id="nav-btn-home" data-nav="home" aria-current="page">
+          <span class="nav-icon">🏠</span> หน้าแรก
+        </button>
+        <button class="nav-btn" id="nav-btn-search" data-nav="search">
+          <span class="nav-icon">🔍</span> ค้นหาคำศัพท์
+        </button>
+        <button class="nav-btn" id="nav-btn-categories" data-nav="categories">
+          <span class="nav-icon">📁</span> หมวดหมู่
+        </button>
+        <button class="nav-btn" id="nav-btn-submit" data-nav="submit">
+          <span class="nav-icon">➕</span> ส่งคำศัพท์ใหม่
+        </button>
+        <button class="nav-btn nav-btn-extra" id="nav-btn-tools" data-nav="tools" title="เครื่องมือแปลแสลงและมินิเกม">
+          <span class="nav-icon">⭐</span> เกี่ยวกับเรา / เครื่องมือ
+        </button>
+      </div>
+
+      <div class="nav-right-actions">
+        <button class="nav-btn nav-btn-admin" id="nav-btn-admin" aria-label="เปิดระบบแอดมิน">
+          <span class="nav-icon">🛡️</span> ระบบแอดมิน
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       MAIN CONTENT
+       3. VIEW 1: หน้าหลัก (หน้าแรก) (HOME VIEW)
   ═══════════════════════════════════════════ -->
-  <main role="main" class="container">
+  <section class="spa-view active" id="view-home" aria-label="หน้าหลัก">
+    <div class="page-main-layout container">
 
-    <!-- ──────────────────────────────────────────
-         SECTION 1: HOME
-    ────────────────────────────────────────── -->
-    <section class="page-section active" id="section-home" aria-label="หน้าแรก">
+      <!-- Left Column: หมวดหมู่คำแสลง + คำแนะนำ -->
+      <aside class="col-left" aria-label="หมวดหมู่และคำแนะนำ">
+        <!-- Card 1: หมวดหมู่คำแสลง -->
+        <div class="ui-card category-card">
+          <h2 class="card-title">
+            <span class="card-title-icon">📁</span> หมวดหมู่คำแสลง
+          </h2>
+          <ul class="category-menu-list" role="list">
+            <li class="category-menu-item active" data-category="all" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ทั้งหมด
+            </li>
+            <li class="category-menu-item" data-category="คำอุทาน / คำเสริม" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> คำอุทาน / คำเสริม
+            </li>
+            <li class="category-menu-item" data-category="คน / ลักษณะนิสัย" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> คน / ลักษณะนิสัย
+            </li>
+            <li class="category-menu-item" data-category="ความรัก / ความสัมพันธ์" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ความรัก / ความสัมพันธ์
+            </li>
+            <li class="category-menu-item" data-category="การเรียน / การทำงาน" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> การเรียน / การทำงาน
+            </li>
+            <li class="category-menu-item" data-category="เทคโนโลยี / โซเชียล" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> เทคโนโลยี / โซเชียล
+            </li>
+            <li class="category-menu-item" data-category="อาหาร / เครื่องดื่ม" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> อาหาร / เครื่องดื่ม
+            </li>
+            <li class="category-menu-item" data-category="ชีวิตประจำวัน" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ชีวิตประจำวัน
+            </li>
+            <li class="category-menu-item" data-category="อื่น ๆ" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> อื่น ๆ
+            </li>
+          </ul>
+        </div>
 
-      <!-- Hero Banner -->
-      <div class="hero-banner">
-        <h1 class="hero-title">📖 คลังแสลงไทยทุกยุค</h1>
-        <p class="hero-subtitle">ค้นหาคำแสลง อ่านความหมาย และเข้าใจบริบทตั้งแต่ยุค ICQ จนถึง TikTok</p>
+        <!-- Card 2: 💡 คำแนะนำ -->
+        <div class="ui-card tip-card">
+          <h3 class="tip-card-title">
+            💡 คำแนะนำ
+          </h3>
+          <p class="tip-card-text">
+            ใช้คำแสลงอย่างสร้างสรรค์ และเคารพความหลากหลายของภาษาไทยนะครับ 😊
+          </p>
+        </div>
+      </aside>
 
-        <!-- Search Bar -->
-        <form class="search-bar" role="search" aria-label="ค้นหาคำแสลง" onsubmit="return false;">
-          <span class="search-icon" aria-hidden="true">🔍</span>
-          <input
-            type="search"
-            id="search-input"
-            name="q"
-            placeholder="พิมพ์คำแสลงหรือความหมาย..."
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-            aria-label="ค้นหาคำแสลง"
-          />
-          <button type="button" id="search-clear" aria-label="ล้างการค้นหา">✕</button>
-          <button type="submit" id="search-btn" aria-label="ค้นหา">ค้นหา</button>
+      <!-- Center Column: ค้นหาคำศัพท์ + คำแสลงยอดนิยม -->
+      <main class="col-center" aria-label="เนื้อหาพจนานุกรมคำแสลง">
+        <!-- Card 1: พจนานุกรมคำแสลงไทย & ช่องค้นหา -->
+        <div class="ui-card dictionary-hero-card">
+          <div class="dict-heading-group">
+            <h1 class="dict-hero-title">
+              <span class="dict-title-icon">🔍</span> พจนานุกรมคำแสลงไทย
+            </h1>
+            <p class="dict-hero-subtitle">
+              รวบรวมคำแสลงจากโซเชียลและอินเทอร์เน็ต พร้อมความหมาย ตัวอย่างการใช้ และบริบทให้เข้าใจง่าย
+            </p>
+          </div>
+
+          <!-- Main Search Input Bar -->
+          <form class="search-form-row" id="home-search-form" role="search" onsubmit="return false;">
+            <div class="search-input-wrapper">
+              <input
+                type="search"
+                id="home-search-input"
+                class="main-search-input"
+                placeholder="พิมพ์คำที่ต้องการค้นหา เช่น เท่, แซ่บ, งง..."
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                aria-label="พิมพ์คำที่ต้องการค้นหา"
+              />
+              <button type="button" id="home-search-clear" class="search-clear-btn" aria-label="ล้างการค้นหา" style="display:none;">✕</button>
+            </div>
+            <button type="submit" id="home-search-submit" class="main-search-btn" aria-label="ค้นหาคำศัพท์">
+              🔍 ค้นหา
+            </button>
+          </form>
+
+          <!-- Sample Search Pills -->
+          <div class="example-search-row">
+            <span class="example-search-label">ตัวอย่างคำค้นหา:</span>
+            <div class="example-pills-list">
+              <button type="button" class="sample-tag-pill" data-query="เท่">เท่</button>
+              <button type="button" class="sample-tag-pill" data-query="แซ่บ">แซ่บ</button>
+              <button type="button" class="sample-tag-pill" data-query="งง">งง</button>
+              <button type="button" class="sample-tag-pill" data-query="ปั่น">ปั่น</button>
+              <button type="button" class="sample-tag-pill" data-query="คุ้ม">คุ้ม</button>
+              <button type="button" class="sample-tag-pill" data-query="ตึง">ตึง</button>
+              <button type="button" class="sample-tag-pill" data-query="งานเข้า">งานเข้า</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: ⭐ คำแสลงยอดนิยม -->
+        <div class="ui-card popular-slang-card">
+          <div class="popular-header-bar">
+            <h2 class="popular-section-title">
+              ⭐ <span id="popular-heading-text">คำแสลงยอดนิยม</span>
+            </h2>
+            <div class="popular-header-meta">
+              <span class="slang-found-count" id="home-found-count">พบ 248 คำ</span>
+              <button type="button" class="btn-random-dice" id="btn-home-random" title="สุ่มคำแสลงทีดิ!">
+                🎲 สุ่มคำ
+              </button>
+            </div>
+          </div>
+
+          <!-- Slang Rows List -->
+          <div class="popular-slang-list" id="home-slang-list" role="list">
+            <!-- Rendered by app.js -->
+          </div>
+
+          <!-- Bottom Action: ดูคำแสลงทั้งหมด -->
+          <div class="popular-footer-action">
+            <button type="button" class="btn-view-all-slangs" id="btn-view-all-slangs">
+              ดูคำแสลงทั้งหมด →
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Column: คำแนะนำการใช้งาน + สถิติ + Retro PC Box -->
+      <aside class="col-right" aria-label="คำแนะนำการใช้งานและสถิติ">
+        <!-- Card 1: 📝 คำแนะนำการใช้งาน (Yellow header tab) -->
+        <div class="ui-card guide-card">
+          <h2 class="guide-card-title">
+            📝 คำแนะนำการใช้งาน
+          </h2>
+          <ul class="guide-bullet-list">
+            <li class="guide-bullet-item">
+              <span class="bullet-star">⭐</span>
+              <span>พิมพ์คำที่ต้องการค้นหาได้เลย</span>
+            </li>
+            <li class="guide-bullet-item">
+              <span class="bullet-star">⭐</span>
+              <span>เลือกหมวดหมู่เพื่อดูคำแสลงในประเภทเดียวกัน</span>
+            </li>
+            <li class="guide-bullet-item">
+              <span class="bullet-star">⭐</span>
+              <span>หากไม่พบคำที่ต้องการ สามารถส่งคำศัพท์ใหม่ได้ที่ <a href="#" class="link-action-blue link-to-submit">"ส่งคำศัพท์ใหม่"</a></span>
+            </li>
+            <li class="guide-bullet-item">
+              <span class="bullet-star">⭐</span>
+              <span>พบข้อมูลผิด? แจ้งได้ที่ <a href="#" class="link-action-red link-to-report">"รายงานข้อมูลผิด"</a> 🤓</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: 📊 สถิติคำวันนี้ -->
+        <div class="ui-card stats-card">
+          <h2 class="stats-card-title">
+            📊 สถิติคำวันนี้
+          </h2>
+          <ul class="stats-counter-list">
+            <li class="stats-counter-row">
+              <span class="stats-label">
+                <span class="stat-icon">📗</span> คำศัพท์ทั้งหมด
+              </span>
+              <span class="stats-number stat-blue" id="stat-count-total">248 คำ</span>
+            </li>
+            <li class="stats-counter-row">
+              <span class="stats-label">
+                <span class="stat-icon">⏰</span> รอการตรวจสอบ
+              </span>
+              <span class="stats-number stat-orange" id="stat-count-pending">12 คำ</span>
+            </li>
+            <li class="stats-counter-row">
+              <span class="stats-label">
+                <span class="stat-icon">❌</span> ถูกปฏิเสธ
+              </span>
+              <span class="stats-number stat-red" id="stat-count-rejected">5 คำ</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Retro Computer Fun Box (Yellow card) -->
+        <div class="ui-card retro-fun-card">
+          <div class="retro-card-illustration">
+            <svg class="retro-pc-svg" viewBox="0 0 100 80" aria-hidden="true">
+              <rect x="18" y="10" width="64" height="48" rx="6" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+              <rect x="24" y="16" width="52" height="36" rx="3" fill="#dbeafe"/>
+              <circle cx="42" cy="30" r="3" fill="#1e3a8a"/>
+              <circle cx="58" cy="30" r="3" fill="#1e3a8a"/>
+              <path d="M44,38 Q50,44 56,38" stroke="#1e3a8a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <rect x="44" y="58" width="12" height="8" fill="#60a5fa"/>
+              <rect x="30" y="66" width="40" height="5" rx="2.5" fill="#2563eb"/>
+              <line x1="60" y1="54" x2="72" y2="54" stroke="#1d4ed8" stroke-width="1.5"/>
+              <circle cx="28" cy="54" r="1.5" fill="#22c55e"/>
+              <text x="6" y="20" font-size="12" fill="#f59e0b">✦</text>
+              <text x="84" y="32" font-size="14" fill="#f59e0b">★</text>
+            </svg>
+          </div>
+          <div class="retro-card-content">
+            <p class="retro-card-text">
+              คำแสลงไทย มีมากกว่าที่คุณคิด! มาเปิดโลกคำใหม่ไปด้วยกัน!
+            </p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       4. VIEW 2: หน้าค้นหาคำศัพท์ (SEARCH VIEW)
+  ═══════════════════════════════════════════ -->
+  <section class="spa-view" id="view-search" aria-label="หน้าค้นหาคำศัพท์" style="display:none;">
+    <div class="page-main-layout container">
+
+      <!-- Left Column: Same Categories -->
+      <aside class="col-left" aria-label="หมวดหมู่คำแสลง">
+        <div class="ui-card category-card">
+          <h2 class="card-title">
+            <span class="card-title-icon">📁</span> หมวดหมู่คำแสลง
+          </h2>
+          <ul class="category-menu-list" role="list">
+            <li class="category-menu-item active" data-category="all" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ทั้งหมด
+            </li>
+            <li class="category-menu-item" data-category="คำอุทาน / คำเสริม" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> คำอุทาน / คำเสริม
+            </li>
+            <li class="category-menu-item" data-category="คน / ลักษณะนิสัย" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> คน / ลักษณะนิสัย
+            </li>
+            <li class="category-menu-item" data-category="ความรัก / ความสัมพันธ์" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ความรัก / ความสัมพันธ์
+            </li>
+            <li class="category-menu-item" data-category="การเรียน / การทำงาน" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> การเรียน / การทำงาน
+            </li>
+            <li class="category-menu-item" data-category="เทคโนโลยี / โซเชียล" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> เทคโนโลยี / โซเชียล
+            </li>
+            <li class="category-menu-item" data-category="อาหาร / เครื่องดื่ม" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> อาหาร / เครื่องดื่ม
+            </li>
+            <li class="category-menu-item" data-category="ชีวิตประจำวัน" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> ชีวิตประจำวัน
+            </li>
+            <li class="category-menu-item" data-category="อื่น ๆ" role="button" tabindex="0">
+              <span class="folder-icon">📁</span> อื่น ๆ
+            </li>
+          </ul>
+        </div>
+
+        <div class="ui-card tip-card">
+          <h3 class="tip-card-title">💡 คำแนะนำ</h3>
+          <p class="tip-card-text">ใช้คำแสลงอย่างสร้างสรรค์ และเคารพความหลากหลายของภาษาไทยนะครับ 😊</p>
+        </div>
+      </aside>
+
+      <!-- Center & Right Combined: Search Results View -->
+      <main class="col-search-results" aria-label="ผลการค้นหา">
+        <!-- Top Search Bar inside Search View -->
+        <div class="ui-card search-bar-top-card">
+          <form class="search-form-row search-form-subpage" id="searchpage-form" role="search" onsubmit="return false;">
+            <div class="search-input-wrapper">
+              <input
+                type="search"
+                id="searchpage-input"
+                class="main-search-input"
+                placeholder="ค้นหาคำแสลง เช่น เท่..."
+                value="เท่"
+                autocomplete="off"
+                aria-label="ค้นหาคำแสลง"
+              />
+              <button type="button" id="searchpage-clear" class="search-clear-btn" aria-label="ล้างการค้นหา">✕</button>
+            </div>
+            <button type="submit" id="searchpage-submit" class="main-search-btn" aria-label="ค้นหา">
+              🔍 ค้นหา
+            </button>
+          </form>
+        </div>
+
+        <!-- Filter Tabs on Top of Results -->
+        <div class="ui-card search-results-card">
+          <div class="results-filter-tabs-row" id="search-filter-tabs-bar" role="tablist">
+            <button type="button" class="results-tab-pill active" data-filter="all" id="tab-filter-all">
+              ทั้งหมด (12)
+            </button>
+            <button type="button" class="results-tab-pill" data-filter="คำอุทาน / คำเสริม" id="tab-filter-exclamation">
+              คำอุทาน (3)
+            </button>
+            <button type="button" class="results-tab-pill" data-filter="คน / ลักษณะนิสัย" id="tab-filter-personality">
+              คน / ลักษณะนิสัย (5)
+            </button>
+            <button type="button" class="results-tab-pill" data-filter="อื่น ๆ" id="tab-filter-other">
+              อื่น ๆ (4)
+            </button>
+          </div>
+
+          <!-- Results Header Title -->
+          <div class="results-heading-row">
+            <h2 class="results-heading-title" id="search-results-heading-text">
+              ผลการค้นหา "เท่" (12 รายการ)
+            </h2>
+          </div>
+
+          <!-- Results Slangs List -->
+          <div class="popular-slang-list" id="searchpage-slang-list" role="list">
+            <!-- Rendered by app.js -->
+          </div>
+
+          <!-- Empty State in Search -->
+          <div class="empty-state-card" id="searchpage-empty-box" style="display:none;">
+            <div class="empty-state-icon">🔍</div>
+            <h3 class="empty-state-title">ไม่พบคำที่ค้นหา</h3>
+            <p class="empty-state-desc">ลองพิมพ์คำอื่น หรือส่งคำศัพท์ใหม่มาให้ทีมงานเพิ่มในระบบ</p>
+            <button type="button" class="btn-empty-submit link-to-submit">
+              ➕ ส่งคำศัพท์ใหม่ทีดิ!
+            </button>
+          </div>
+
+          <!-- Pagination Bar -->
+          <div class="pagination-bar-wrapper" id="search-pagination-wrapper">
+            <button type="button" class="page-btn-nav" id="page-prev" aria-label="หน้าก่อนหน้า">&lt;</button>
+            <button type="button" class="page-btn-num active" data-page="1">1</button>
+            <button type="button" class="page-btn-num" data-page="2">2</button>
+            <button type="button" class="page-btn-nav" id="page-next" aria-label="หน้าถัดไป">&gt;</button>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       5. VIEW 3: หน้ารายละเอียดคำศัพท์ (WORD DETAIL VIEW)
+  ═══════════════════════════════════════════ -->
+  <section class="spa-view" id="view-detail" aria-label="หน้ารายละเอียดคำศัพท์" style="display:none;">
+    <div class="container detail-container">
+
+      <!-- Breadcrumbs Bar -->
+      <nav class="breadcrumb-nav-bar" aria-label="เส้นทางนำทาง">
+        <span class="bc-icon">🏠</span>
+        <a href="#" class="bc-link" id="bc-home-link">หน้าแรก</a>
+        <span class="bc-sep">&gt;</span>
+        <a href="#" class="bc-link" id="bc-search-link">ค้นหาคำศัพท์</a>
+        <span class="bc-sep">&gt;</span>
+        <span class="bc-current" id="bc-current-word">เท่</span>
+      </nav>
+
+      <!-- Main Word Detail Card -->
+      <article class="ui-card word-detail-card-layout">
+        <!-- Left Side: Mascot Box with "เท่เวอร์!" -->
+        <aside class="detail-mascot-box">
+          <div class="detail-mascot-container">
+            <img src="assets/mascot.jpg" alt="มาสคอตแมวสุดเท่" class="detail-mascot-image" />
+          </div>
+          <div class="detail-mascot-badge-pill" id="detail-mascot-quote">
+            เท่เวอร์!
+          </div>
+        </aside>
+
+        <!-- Right Side: Word Information & Metadata -->
+        <div class="detail-info-box">
+          <!-- Header Row -->
+          <div class="detail-title-row">
+            <div class="detail-title-left">
+              <span class="detail-word-emoji" id="detail-word-icon">👑</span>
+              <h1 class="detail-word-title" id="detail-word-name">เท่</h1>
+              <span class="detail-category-badge" id="detail-word-category">คน / ลักษณะนิสัย</span>
+            </div>
+            <div class="detail-title-right">
+              <button type="button" class="btn-share-word" id="btn-share-word" title="แชร์คำศัพท์นี้">
+                <span class="share-icon">↗</span> แชร์
+              </button>
+            </div>
+          </div>
+
+          <!-- Content Grid Table -->
+          <div class="detail-meta-grid">
+            <div class="detail-meta-item detail-meta-meaning">
+              <strong class="meta-label">ความหมาย</strong>
+              <p class="meta-value" id="detail-word-meaning">หมายถึง ดี ดูดี มีสไตล์</p>
+            </div>
+
+            <div class="detail-meta-item detail-meta-part">
+              <strong class="meta-label">ประเภทคำ</strong>
+              <p class="meta-value" id="detail-word-part">คำคุณศัพท์</p>
+            </div>
+
+            <div class="detail-meta-item detail-meta-examples">
+              <strong class="meta-label">ตัวอย่างการใช้</strong>
+              <ul class="detail-examples-list" id="detail-word-examples">
+                <li>เขาเท่มากเลย</li>
+                <li>เสื้อผ้าแบบนี้เท่ดีนะ</li>
+                <li>งานนี้ต้องบอกว่าเท่จริง ๆ</li>
+              </ul>
+            </div>
+
+            <div class="detail-meta-item detail-meta-level">
+              <strong class="meta-label">ระดับภาษา</strong>
+              <p class="meta-value" id="detail-word-level">ภาษาพูด</p>
+            </div>
+
+            <div class="detail-meta-item detail-meta-context">
+              <strong class="meta-label">บริบทการใช้</strong>
+              <p class="meta-value" id="detail-word-context">ใช้ชมคน สิ่งของ หรือการกระทำที่ดูดี น่าประทับใจ</p>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="detail-actions-row">
+            <button type="button" class="btn-report-word" id="btn-detail-report">
+              ⚠️ แจ้งข้อมูลผิด
+            </button>
+            <button type="button" class="btn-back-to-search" id="btn-detail-back">
+              กลับไปหน้าค้นหา
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       6. VIEW 4: หน้าส่งคำศัพท์ใหม่ (SUBMIT SLANG VIEW)
+  ═══════════════════════════════════════════ -->
+  <section class="spa-view" id="view-submit" aria-label="หน้าส่งคำศัพท์ใหม่" style="display:none;">
+    <div class="container submit-container">
+
+      <!-- Breadcrumbs Bar -->
+      <nav class="breadcrumb-nav-bar" aria-label="เส้นทางนำทาง">
+        <span class="bc-icon">🏠</span>
+        <a href="#" class="bc-link link-to-home">หน้าแรก</a>
+        <span class="bc-sep">&gt;</span>
+        <span class="bc-current">ส่งคำศัพท์ใหม่</span>
+      </nav>
+
+      <!-- Main Form Card -->
+      <div class="ui-card submit-card-wrapper">
+        <div class="submit-header-box">
+          <h1 class="submit-card-title">
+            <span class="submit-star-icon">⭐</span> ส่งคำศัพท์ใหม่
+          </h1>
+          <p class="submit-card-subtitle">
+            ร่วมสร้างพจนานุกรมคำแสลงไทย ส่งคำศัพท์ที่คุณรู้จักมาให้เราตรวจสอบ
+          </p>
+        </div>
+
+        <form class="submit-page-form" id="submit-new-slang-form" novalidate>
+          <div class="form-row-2col">
+            <div class="form-field-group">
+              <label for="form-new-word" class="form-label">คำศัพท์ <span class="text-danger">*</span></label>
+              <input type="text" id="form-new-word" class="form-input-text" placeholder="เช่น เท่" required maxlength="60" />
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-new-meaning" class="form-label">ความหมาย <span class="text-danger">*</span></label>
+              <input type="text" id="form-new-meaning" class="form-input-text" placeholder="อธิบายความหมายของคำนี้" required maxlength="300" />
+            </div>
+          </div>
+
+          <div class="form-field-group">
+            <label for="form-new-example" class="form-label">ตัวอย่างการใช้</label>
+            <input type="text" id="form-new-example" class="form-input-text" placeholder="เช่น เขาเท่มากเลย" maxlength="300" />
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-field-group">
+              <label for="form-new-part" class="form-label">ประเภทคำ <span class="text-danger">*</span></label>
+              <select id="form-new-part" class="form-select-control" required>
+                <option value="" disabled selected>เลือกประเภทคำ</option>
+                <option value="คำคุณศัพท์">คำคุณศัพท์</option>
+                <option value="คำนาม">คำนาม</option>
+                <option value="คำกริยา">คำกริยา</option>
+                <option value="คำอุทาน">คำอุทาน</option>
+                <option value="คำวิเศษณ์">คำวิเศษณ์</option>
+                <option value="สำนวน / วลี">สำนวน / วลี</option>
+              </select>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-new-level" class="form-label">ระดับภาษา <span class="text-danger">*</span></label>
+              <select id="form-new-level" class="form-select-control" required>
+                <option value="" disabled selected>เลือกระดับภาษา</option>
+                <option value="ภาษาพูด">ภาษาพูด</option>
+                <option value="ภาษาไม่เป็นทางการ">ภาษาไม่เป็นทางการ</option>
+                <option value="แสลงเฉพาะกลุ่ม">แสลงเฉพาะกลุ่ม</option>
+                <option value="ภาษาวัยรุ่น / โซเชียล">ภาษาวัยรุ่น / โซเชียล</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- File Upload Dropzone -->
+          <div class="form-field-group">
+            <label class="form-label">แนบรูป (ถ้ามี)</label>
+            <div class="file-dropzone-box" id="file-dropzone">
+              <div class="dropzone-content">
+                <span class="dropzone-folder-icon">📁</span>
+                <span class="dropzone-btn-text">เลือกไฟล์</span>
+                <span class="dropzone-hint-text">หรือลากไฟล์มาวาง (ขนาดไม่เกิน 5MB)</span>
+              </div>
+              <input type="file" id="form-new-file" class="file-input-hidden" accept="image/*" />
+            </div>
+            <div id="file-preview-name" class="file-selected-label" style="display:none;"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn-row">
+            <button type="submit" class="btn-yellow-submit" id="btn-send-new-word">
+              <span class="btn-icon">📤</span> ส่งคำศัพท์
+            </button>
+          </div>
+
+          <!-- Success Alert -->
+          <div id="submit-page-success" class="alert-box-success" style="display:none;">
+            🎉 ส่งคำศัพท์สำเร็จแล้ว! ข้อมูลของคุณจะเข้าสู่คิวรอตรวจสอบ ขอบคุณที่ร่วมสร้างพจนานุกรมคำแสลงไทยครับ!
+          </div>
         </form>
       </div>
 
-      <!-- Era Filter -->
-      <div class="filters-row" role="group" aria-label="กรองตามยุค">
-        <span class="filter-label">ยุค:</span>
-        <button class="filter-era-btn active" data-era="all" id="era-filter-all">ทั้งหมด</button>
-        <button class="filter-era-btn" data-era="90s" id="era-filter-90s">🌐 ยุค 90s</button>
-        <button class="filter-era-btn" data-era="2000s" id="era-filter-2000s">💖 ยุค 2000s</button>
-        <button class="filter-era-btn" data-era="2010s" id="era-filter-2010s">📱 ยุค 2010s</button>
-        <button class="filter-era-btn" data-era="2020s" id="era-filter-2020s">⚡ ยุค 2020s</button>
-      </div>
-
-      <!-- Category Filter -->
-      <div class="filters-row" role="group" aria-label="กรองตามหมวดหมู่">
-        <span class="filter-label">หมวด:</span>
-        <div class="category-scroll" id="category-filters" aria-label="หมวดหมู่คำแสลง">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-
-      <!-- Toolbar -->
-      <div class="toolbar">
-        <span id="word-count" aria-live="polite" aria-label="จำนวนคำที่พบ">พบ 0 คำ</span>
-        <button id="random-btn" aria-label="สุ่มคำแสลง">🎲 สุ่มคำแสลงทีดิ!</button>
-      </div>
-
-      <!-- Word Grid -->
-      <div id="word-grid" role="list" aria-label="รายการคำแสลง">
-        <!-- Rendered by JS -->
-      </div>
-
-    </section>
-
-    <!-- ──────────────────────────────────────────
-         SECTION 2: TRANSLATOR
-    ────────────────────────────────────────── -->
-    <section class="page-section" id="section-translator" aria-label="เครื่องมือแปลแสลง">
-      <h2 class="section-title">🔄 เครื่องมือแปลแสลง</h2>
-      <p class="section-desc">พิมพ์ข้อความที่มีคำแสลง แล้วเราจะช่วยแปลให้เข้าใจง่ายขึ้น</p>
-
-      <div class="translator-layout">
-        <!-- Input Box -->
-        <div class="translator-box">
-          <label for="translator-input">📝 ข้อความต้นฉบับ</label>
-          <textarea
-            id="translator-input"
-            placeholder="พิมพ์ข้อความที่ต้องการแปล เช่น 'วันนี้ตัวตึงมากเลย ฉ่ำสุดๆ'&#10;(กด Ctrl+Enter เพื่อแปล)"
-            aria-label="กรอกข้อความต้นฉบับ"
-          ></textarea>
-          <div class="translator-controls">
-            <button class="btn btn-primary" id="translate-btn">🔄 แปลเดี๋ยวนี้!</button>
-            <button class="btn btn-secondary" id="translator-clear-btn">🗑️ ล้าง</button>
-          </div>
-        </div>
-
-        <!-- Direction Swap -->
-        <div class="translator-swap-col">
-          <button id="translator-direction-btn" aria-label="เปลี่ยนทิศทางการแปล">
-            🔄 แสลง → ทางการ
-          </button>
-        </div>
-
-        <!-- Output Box -->
-        <div class="translator-box">
-          <label>✨ ผลการแปล</label>
-          <div id="translator-output" aria-live="polite" aria-label="ผลการแปล">
-            <span class="placeholder-text">ผลลัพธ์การแปลจะปรากฏที่นี่...</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Found Words List -->
-      <div class="translator-found" id="translator-found-list" aria-live="polite" aria-label="คำแสลงที่พบ">
-      </div>
-
-    </section>
-
-    <!-- ──────────────────────────────────────────
-         SECTION 3: ERA QUIZ
-    ────────────────────────────────────────── -->
-    <section class="page-section" id="section-quiz" aria-label="แบบทดสอบวัดระดับยุค">
-
-      <div class="quiz-intro">
-        <div class="quiz-intro-emoji">🕹️</div>
-        <h2 class="section-title">คุณเป็นคนยุคไหน?</h2>
-        <p class="section-desc">ตอบคำถาม 5 ข้อ แล้วเราจะบอกว่าคุณเป็นประชากรยุคอินเทอร์เน็ตยุคไหน!</p>
-        <button class="btn btn-primary" id="quiz-start-btn" style="margin:0 auto;">🎮 เริ่มทดสอบ!</button>
-      </div>
-
-      <div id="quiz-container" aria-live="polite" aria-label="คำถามแบบทดสอบ">
-        <!-- Rendered by JS -->
-      </div>
-
-    </section>
-
-    <!-- ──────────────────────────────────────────
-         SECTION 4: SUBMIT SLANG
-    ────────────────────────────────────────── -->
-    <section class="page-section" id="section-submit" aria-label="ส่งคำศัพท์ใหม่">
-      <h2 class="section-title">✍️ ส่งคำแสลงใหม่</h2>
-      <p class="section-desc">มีคำแสลงที่ยังไม่มีในคลัง? ส่งมาให้เราเพิ่มในระบบ!</p>
-
-      <div class="submit-notice" role="note">
-        📋 <strong>หมายเหตุ:</strong> คำแสลงที่ส่งจะถูกตรวจสอบโดยทีมงานก่อนเผยแพร่ เพื่อรักษาความถูกต้องและคุณภาพของคลังข้อมูล
-      </div>
-
-      <form class="submit-form" id="submit-slang-form" novalidate aria-label="แบบฟอร์มส่งคำแสลงใหม่">
-
-        <!-- Honeypot (anti-spam, hidden) -->
-        <div class="honeypot-field" aria-hidden="true">
-          <input type="text" id="submit-honeypot" name="website" tabindex="-1" autocomplete="off" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-word">
-            คำแสลง <span class="required">*</span>
-          </label>
-          <input
-            class="form-input"
-            type="text"
-            id="submit-word"
-            name="word"
-            placeholder="เช่น ตัวตึง, ฉ่ำ, จึ้ง"
-            maxlength="60"
-            required
-            aria-required="true"
-          />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-meaning">
-            ความหมาย <span class="required">*</span>
-          </label>
-          <textarea
-            class="form-input form-textarea"
-            id="submit-meaning"
-            name="meaning"
-            placeholder="อธิบายความหมายของคำนี้ให้ชัดเจน"
-            maxlength="300"
-            required
-            aria-required="true"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-example">
-            ตัวอย่างประโยค <span class="required">*</span>
-          </label>
-          <textarea
-            class="form-input form-textarea"
-            id="submit-example"
-            name="example"
-            placeholder="เช่น 'วันนี้ฉ่ำมาก ได้ทานข้าวอร่อยๆ'"
-            maxlength="300"
-            required
-            aria-required="true"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-era">ยุคของคำศัพท์</label>
-          <select class="form-input form-select" id="submit-era" name="era">
-            <option value="">ไม่แน่ใจ</option>
-            <option value="90s">🌐 ยุค 90s (ICQ / Pantip เว็บบอร์ด)</option>
-            <option value="2000s">💖 ยุค 2000s (MSN / Hi5 / Y2K)</option>
-            <option value="2010s">📱 ยุค 2010s (Facebook / BB PIN)</option>
-            <option value="2020s">⚡ ยุค 2020s (TikTok / Gen Z)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-level">ระดับภาษา</label>
-          <select class="form-input form-select" id="submit-level" name="level">
-            <option value="informal">ไม่เป็นทางการ</option>
-            <option value="vulgar">หยาบ</option>
-            <option value="offensive">หยาบมาก</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="submit-ref">ลิงก์อ้างอิง (ไม่บังคับ)</label>
-          <input
-            class="form-input"
-            type="url"
-            id="submit-ref"
-            name="reference"
-            placeholder="https://..."
-          />
-          <p class="form-hint">ลิงก์ไปยังคลิป บทความ หรือโพสต์ต้นฉบับ</p>
-        </div>
-
-        <button class="btn btn-primary" type="submit" id="submit-form-btn" style="width:100%;">
-          📤 ส่งคำแสลงเพื่อตรวจสอบ
-        </button>
-
-        <div id="submit-success" role="alert">
-          ✅ ขอบคุณที่ร่วมสร้างคลังคำแสลง! ทีมงานจะตรวจสอบและเพิ่มให้เร็วๆ นี้ 🎉
-        </div>
-
-      </form>
-    </section>
-
-    <!-- ──────────────────────────────────────────
-         SECTION 5: BOOKMARKS
-    ────────────────────────────────────────── -->
-    <section class="page-section" id="section-bookmarks" aria-label="คำโปรดที่บันทึกไว้">
-      <h2 class="section-title">❤️ คำโปรดของฉัน</h2>
-      <p class="section-desc">คำแสลงที่คุณกดหัวใจบันทึกไว้ จะยังอยู่ที่นี่แม้กด Refresh</p>
-
-      <div id="bookmarks-grid" role="list" aria-label="รายการคำโปรด">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════
-       FOOTER
+       7. VIEW 5: หน้าแอดมิน (จัดการคำศัพท์) (ADMIN DASHBOARD VIEW)
+  ═══════════════════════════════════════════ -->
+  <section class="spa-view" id="view-admin" aria-label="ระบบแอดมิน จัดการคำศัพท์" style="display:none;">
+    <div class="container admin-container">
+
+      <!-- Admin Top Navbar -->
+      <div class="admin-top-bar-layout ui-card">
+        <div class="admin-bar-left">
+          <span class="admin-shield-icon">🛡️</span>
+          <span class="admin-brand-title">ระบบแอดมิน — จัดการคำแสลง</span>
+        </div>
+        <div class="admin-bar-right">
+          <span class="admin-user-pill">👤 แอดมิน (admin@example.com)</span>
+          <button type="button" class="btn-admin-logout" id="btn-admin-logout">
+            🚪 ออกจากระบบ
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin 2-Column Layout -->
+      <div class="admin-content-layout">
+        <!-- Left Admin Navigation Sidebar -->
+        <aside class="admin-sidebar-menu ui-card">
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item active" id="admin-tab-pending">
+              <span class="admin-nav-icon">📁</span>
+              <span class="admin-nav-label">คำที่รอตรวจสอบ</span>
+              <span class="admin-nav-counter" id="admin-badge-pending-count">12</span>
+            </li>
+            <li class="admin-nav-item" id="admin-tab-all">
+              <span class="admin-nav-icon">📁</span>
+              <span class="admin-nav-label">คำศัพท์ทั้งหมด</span>
+            </li>
+            <li class="admin-nav-item" id="admin-tab-reports">
+              <span class="admin-nav-icon">📁</span>
+              <span class="admin-nav-label">รายงานข้อมูลผิด</span>
+            </li>
+            <li class="admin-nav-item" id="admin-tab-settings">
+              <span class="admin-nav-icon">⚙️</span>
+              <span class="admin-nav-label">ตั้งค่า</span>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Right Admin Main Area -->
+        <main class="admin-main-table-card ui-card">
+          <div class="admin-table-heading-row">
+            <h2 class="admin-table-title">คำที่รอตรวจสอบ</h2>
+          </div>
+
+          <!-- Pending Words Table -->
+          <div class="admin-table-responsive">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>คำศัพท์</th>
+                  <th>ผู้ส่ง</th>
+                  <th>วันที่ส่ง</th>
+                  <th>สถานะ</th>
+                  <th style="text-align:right;">จัดการ</th>
+                </tr>
+              </thead>
+              <tbody id="admin-pending-tbody">
+                <!-- Rendered dynamically by app.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Admin Table Pagination -->
+          <div class="admin-table-pagination">
+            <button type="button" class="page-btn-nav" id="admin-page-prev">&lt;</button>
+            <button type="button" class="page-btn-num active" data-admin-page="1">1</button>
+            <button type="button" class="page-btn-num" data-admin-page="2">2</button>
+            <button type="button" class="page-btn-nav" id="admin-page-next">&gt;</button>
+          </div>
+        </main>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER (Dark Blue Bar with Links)
   ═══════════════════════════════════════════ -->
   <footer class="site-footer" role="contentinfo">
-    <p>
-      <span class="footer-logo">📖 แปลทีดิtionary</span>
-      &nbsp;—&nbsp;
-      งงคำไหน แปลทีดิ! 🔥
-      &nbsp;|&nbsp;
-      พจนานุกรมคำแสลงไทยทุกยุค
-    </p>
+    <div class="footer-inner container">
+      <div class="footer-links-row">
+        <span class="footer-star-icon">⭐</span>
+        <a href="#" class="footer-link link-to-home">หน้าแรก</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link link-to-search">ค้นหาคำศัพท์</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link link-to-categories">หมวดหมู่</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link link-to-submit">ส่งคำศัพท์ใหม่</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link link-to-report">รายงานข้อมูลผิด</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link link-to-tools">ติดต่อเรา / เครื่องมือ</a>
+      </div>
+      <div class="footer-credit-row">
+        <span>แปลทีดิtionary © 2025</span>
+        <span class="footer-sub-slogan">งงคำไหน แปลทีดิ! 😊</span>
+      </div>
+    </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MOBILE STICKY BOTTOM NAVIGATION BAR
+  ═══════════════════════════════════════════ -->
+  <nav class="mobile-bottom-nav" aria-label="เมนูมือถือ">
+    <button type="button" class="mobile-nav-btn active" data-mobile-nav="home">
+      <span class="m-icon">🏠</span>
+      <span class="m-label">หน้าแรก</span>
+    </button>
+    <button type="button" class="mobile-nav-btn" data-mobile-nav="search">
+      <span class="m-icon">🔍</span>
+      <span class="m-label">ค้นหา</span>
+    </button>
+    <button type="button" class="mobile-nav-btn" data-mobile-nav="categories">
+      <span class="m-icon">📁</span>
+      <span class="m-label">หมวดหมู่</span>
+    </button>
+    <button type="button" class="mobile-nav-btn" data-mobile-nav="more">
+      <span class="m-icon">•••</span>
+      <span class="m-label">อื่นๆ</span>
+    </button>
+  </nav>
 
 </div><!-- /.app-wrapper -->
 
 
 <!-- ═══════════════════════════════════════════
-     WORD DETAIL MODAL
+     MODAL 1: ADMIN LOGIN MODAL (SCREEN 5)
 ═══════════════════════════════════════════ -->
-<div class="modal-overlay" id="word-modal" role="dialog" aria-modal="true" aria-labelledby="modal-word-title-text">
-  <div id="modal-overlay" aria-hidden="true" style="position:absolute;inset:0;cursor:pointer;"></div>
-  <div class="modal-box" role="document">
-    <div class="modal-header-bar">
-      <button id="modal-close" aria-label="ปิดหน้าต่าง">✕</button>
-    </div>
-    <div id="modal-body">
-      <!-- Rendered by JS -->
-    </div>
-  </div>
-</div>
+<div class="modal-overlay" id="modal-admin-login" role="dialog" aria-modal="true" aria-label="เข้าสู่ระบบแอดมิน">
+  <div class="modal-backdrop" id="backdrop-admin-login" aria-hidden="true"></div>
+  <div class="modal-card admin-login-card-dialog" role="document">
+    <button type="button" class="modal-close-corner-btn" id="btn-close-admin-login" aria-label="ปิดหน้าต่าง">✕</button>
 
-<!-- ═══════════════════════════════════════════
-     REPORT MODAL
-═══════════════════════════════════════════ -->
-<div class="modal-overlay" id="report-modal" role="dialog" aria-modal="true" aria-label="แจ้งข้อมูลผิด">
-  <div id="report-overlay" style="position:absolute;inset:0;" aria-hidden="true"></div>
-  <div class="modal-box" style="max-width:420px;" role="document">
-    <div class="modal-header-bar">
-      <button id="report-modal-close" aria-label="ปิดหน้าต่างแจ้งข้อมูลผิด">✕</button>
-    </div>
-    <div class="report-box">
-      <h3>🚩 แจ้งข้อมูลผิด</h3>
-      <p>คำ: <span class="report-word-name" id="report-word-title"></span></p>
-      <label for="report-message" class="form-label">รายละเอียดที่ต้องการแจ้ง <span class="required">*</span></label>
-      <textarea
-        id="report-message"
-        placeholder="อธิบายว่าข้อมูลใดไม่ถูกต้อง หรือควรแก้ไขอย่างไร..."
-        aria-required="true"
-      ></textarea>
-      <div class="report-actions">
-        <button class="btn btn-primary" id="report-submit-btn">📤 ส่งรายงาน</button>
-        <button class="btn btn-secondary" id="report-cancel-btn" onclick="document.getElementById('report-modal').classList.remove('open')">ยกเลิก</button>
+    <div class="admin-login-dialog-grid">
+      <!-- Left: Cute Retro PC Illustration with "แอดมินเท่านั้น!" -->
+      <div class="admin-login-graphic-box">
+        <div class="login-stars-decor">✦ ★ ✦</div>
+        <div class="retro-pc-login-art">
+          <svg class="retro-pc-dialog-svg" viewBox="0 0 100 80" aria-hidden="true">
+            <rect x="16" y="10" width="68" height="50" rx="6" fill="#60a5fa" stroke="#2563eb" stroke-width="2"/>
+            <rect x="22" y="16" width="56" height="38" rx="3" fill="#eff6ff"/>
+            <circle cx="40" cy="30" r="3.5" fill="#1e40af"/>
+            <circle cx="60" cy="30" r="3.5" fill="#1e40af"/>
+            <path d="M42,39 Q50,47 58,39" stroke="#1e40af" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <rect x="44" y="60" width="12" height="8" fill="#3b82f6"/>
+            <rect x="28" y="68" width="44" height="5" rx="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <div class="admin-login-badge-pill">
+          แอดมินเท่านั้น!
+        </div>
+      </div>
+
+      <!-- Right: Login Form -->
+      <div class="admin-login-form-box">
+        <div class="admin-login-title-row">
+          <span class="lock-icon">🔒</span>
+          <h2 class="admin-login-heading">เข้าสู่ระบบแอดมิน</h2>
+        </div>
+        <p class="admin-login-desc">กรุณาเข้าสู่ระบบเพื่อจัดการข้อมูลคำศัพท์</p>
+
+        <form class="admin-login-form" id="admin-login-form" onsubmit="return false;">
+          <div class="form-group-item">
+            <label for="admin-login-email" class="form-label">อีเมล</label>
+            <input type="email" id="admin-login-email" class="form-input-text" value="admin@example.com" required />
+          </div>
+
+          <div class="form-group-item">
+            <label for="admin-login-password" class="form-label">รหัสผ่าน</label>
+            <div class="password-input-wrap">
+              <input type="password" id="admin-login-password" class="form-input-text" placeholder="ใส่รหัสผ่าน" value="admin1234" required />
+              <button type="button" id="btn-toggle-password" class="btn-eye-toggle" aria-label="แสดงหรือซ่อนรหัสผ่าน">👁️</button>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-admin-login" class="btn-yellow-submit full-width">
+            เข้าสู่ระบบ
+          </button>
+
+          <div class="admin-login-forgot-row">
+            <a href="#" id="link-admin-forgot" class="forgot-link">ลืมรหัสผ่าน?</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -373,8 +824,105 @@
 
 
 <!-- ═══════════════════════════════════════════
-     SCRIPTS (load order is critical)
+     MODAL 2: REPORT ERROR MODAL
 ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-report-error" role="dialog" aria-modal="true" aria-label="รายงานข้อมูลผิด">
+  <div class="modal-backdrop" id="backdrop-report-error" aria-hidden="true"></div>
+  <div class="modal-card modal-form-compact" role="document">
+    <div class="modal-header-bar">
+      <h3 class="modal-header-title">🚩 รายงานข้อมูลผิด</h3>
+      <button type="button" class="modal-close-corner-btn" id="btn-close-report-modal" aria-label="ปิดหน้าต่าง">✕</button>
+    </div>
+    <form class="modal-form-content" id="report-error-form" onsubmit="return false;">
+      <div class="form-group-item">
+        <label for="report-word-input" class="form-label">คำศัพท์ที่ต้องการรายงาน</label>
+        <input type="text" id="report-word-input" class="form-input-text" value="เท่" />
+      </div>
+      <div class="form-group-item">
+        <label for="report-reason-select" class="form-label">ประเภทปัญหา</label>
+        <select id="report-reason-select" class="form-select-control">
+          <option value="meaning">ความหมายไม่ถูกต้อง</option>
+          <option value="spelling">สะกดผิด / คำอ่านผิด</option>
+          <option value="category">หมวดหมู่ไม่ตรง</option>
+          <option value="other">อื่น ๆ</option>
+        </select>
+      </div>
+      <div class="form-group-item">
+        <label for="report-detail-textarea" class="form-label">รายละเอียดเพิ่มเติม <span class="text-danger">*</span></label>
+        <textarea id="report-detail-textarea" class="form-textarea-control" placeholder="ช่วยอธิบายข้อมูลที่ถูกต้องให้เราทราบหน่อยครับ..." required></textarea>
+      </div>
+      <div class="modal-form-actions">
+        <button type="submit" class="btn-yellow-submit full-width" id="btn-submit-report">
+          📤 ส่งรายงานข้อมูลผิด
+        </button>
+      </div>
+      <div id="report-success-alert" class="alert-box-success" style="display:none;">
+        ✅ ส่งรายงานเรียบร้อยแล้ว ทีมงานจะตรวจสอบและปรับปรุงข้อมูลให้ครับ ขอบคุณครับ!
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     MODAL 3: TOOLS & MINI-GAMES MODAL (Translator, Quiz, Bookmarks)
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-tools-extra" role="dialog" aria-modal="true" aria-label="เครื่องมือเสริม">
+  <div class="modal-backdrop" id="backdrop-tools-extra" aria-hidden="true"></div>
+  <div class="modal-card tools-modal-card" role="document">
+    <div class="modal-header-bar">
+      <div class="tools-tab-switcher">
+        <button type="button" class="tools-nav-tab active" id="tab-btn-translator">🔄 แปลภาษาแสลง</button>
+        <button type="button" class="tools-nav-tab" id="tab-btn-quiz">🎮 ทดสอบวัดระดับยุค</button>
+        <button type="button" class="tools-nav-tab" id="tab-btn-bookmarks">❤️ คลังคำโปรด</button>
+      </div>
+      <button type="button" class="modal-close-corner-btn" id="btn-close-tools-modal" aria-label="ปิดหน้าต่าง">✕</button>
+    </div>
+
+    <div class="tools-body-content">
+      <!-- Tool 1: Translator -->
+      <div class="tool-pane active" id="pane-translator">
+        <p class="tool-desc">พิมพ์ข้อความที่มีคำแสลง ระบบจะตรวจจับและแปลเป็นภาษาทางการทันที</p>
+        <div class="translator-flex-grid">
+          <div class="trans-column">
+            <label class="trans-label" for="tools-input-text">ข้อความต้นฉบับ</label>
+            <textarea id="tools-input-text" class="form-textarea-control" placeholder="พิมพ์ข้อความ เช่น 'วันนี้ตัวตึงมากเลย แซ่บสุดๆ เท่เวอร์'" rows="4"></textarea>
+            <div class="trans-btns-row">
+              <button type="button" class="btn-blue-action" id="btn-run-translator">🔄 แปลข้อความ</button>
+              <button type="button" class="btn-clear-gray" id="btn-clear-translator">🗑️ ล้าง</button>
+            </div>
+          </div>
+          <div class="trans-column">
+            <label class="trans-label">✨ ผลการแปล</label>
+            <div id="tools-output-box" class="trans-output-box">
+              <span class="text-muted">ผลลัพธ์จะปรากฏที่นี่เมื่อกดแปล...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool 2: Era Quiz -->
+      <div class="tool-pane" id="pane-quiz" style="display:none;">
+        <div id="tools-quiz-wrapper">
+          <!-- Rendered by quiz.js -->
+        </div>
+      </div>
+
+      <!-- Tool 3: Bookmarks -->
+      <div class="tool-pane" id="pane-bookmarks" style="display:none;">
+        <h4 class="bookmarks-pane-title">❤️ คำแสลงที่คุณกดบันทึกไว้</h4>
+        <div id="tools-bookmarks-list" class="popular-slang-list">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast-notification" class="toast-box" role="status" aria-live="polite"></div>
+
+<!-- Scripts -->
 <script src="scripts/slang-data.js"></script>
 <script src="scripts/translator.js"></script>
 <script src="scripts/quiz.js"></script>
